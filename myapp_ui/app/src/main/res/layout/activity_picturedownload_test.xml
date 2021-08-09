@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".picture.picturedownload_test">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="240dp"
+        android:scaleType="fitXY"
+        android:background="#81C784"
+        android:id="@+id/iv_test_input" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="显示图片"
+        android:background="#4DD0E1"
+        android:id="@+id/btn_show_testPicture"/>
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".movie.movie_search">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="fitCenter"
+
+        android:src="@drawable/movie_search_inset_picture" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+        <EditText
+            android:id="@+id/et_search_input"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:background="@drawable/editview_shape"
+            android:layout_width="match_parent"
+            android:maxLines="1"
+            android:padding="20dp"
+            android:textColor="#389fd6"
+            android:hint="输入电影名"
+            android:layout_margin="30dp"
+           android:layout_height="60dp"/>
+
+
+        <Button
+            android:id="@+id/btn_movie_search"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:background="@drawable/btn_search_btnstyle"
+            android:elevation="10dp"
+            android:text="搜索"
+            android:textSize="40dp"
+            android:textColor="#f27c8c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/movie_search_icon"
+            android:paddingLeft="40dp"
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

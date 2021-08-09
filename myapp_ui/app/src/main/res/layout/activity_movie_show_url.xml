@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".movie.movie_show_url">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="219dp"
+        android:src="@drawable/baiduyun_icon" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textSize="20sp"
+        android:text="链接为："
+        android:textColor="#4DB6AC" />
+    <TextView
+        android:id="@+id/tv_movie_info_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:textSize="20sp"
+        android:textIsSelectable="true"
+        android:text="23123123123132123123132123123123123123123121313213"
+        android:textColor="#4DB6AC" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:layout_marginTop="200dp"
+        android:text="复制链接，然后打开百度云盘客户端，会自动跳出资源窗口" />
+</LinearLayout>

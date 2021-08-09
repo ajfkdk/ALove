@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="50dp"
+    tools:context=".picture.picture_main_function">
+    <Button
+        android:id="@+id/btn_picture_show"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="查看"
+        android:layout_margin="40dp"
+        android:background="@drawable/movie_search_icon_shuibowen"
+        android:drawableStart="@drawable/picture_show"
+        android:paddingLeft="100dp"
+        android:textSize="30sp"
+        android:textAlignment="textStart"
+        android:textColor="#4DD0E1"
+        /><Button
+
+        android:id="@+id/btn_picture_sync"
+        android:layout_width="match_parent"
+    android:layout_height="60dp"
+        android:text="同步"
+        android:textAlignment="textStart"
+        android:drawableStart="@drawable/picture_sync"
+        android:paddingLeft="100dp"
+        android:layout_margin="40dp"
+        android:background="@drawable/movie_search_icon_shuibowen"
+        android:textSize="30sp"
+        android:textColor="#4DD0E1"
+        /><Button
+        android:id="@+id/btn_picture_upload"
+        android:layout_width="match_parent"
+    android:layout_height="60dp"
+        android:text="上传"
+        android:textAlignment="textStart"
+        android:drawableStart="@drawable/picture_upload"
+        android:paddingLeft="100dp"
+        android:layout_margin="40dp"
+        android:background="@drawable/movie_search_icon_shuibowen"
+        android:textSize="30sp"
+        android:textColor="#4DD0E1"
+        />
+</LinearLayout>
