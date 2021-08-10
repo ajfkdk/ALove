@@ -1,16 +1,17 @@
 package com.example.myapp_ui.picture;
 
+import android.content.Intent;
+import android.graphics.Rect;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.graphics.Rect;
-import android.os.Bundle;
-
 import com.example.myapp_ui.R;
-
-import android.view.View;
 
 
 public class picture_show extends AppCompatActivity {
@@ -35,6 +36,17 @@ public class picture_show extends AppCompatActivity {
         gridCy.addItemDecoration(new MyDecoration(3,20,20));
         gridCy.setAdapter(new picture_show_adapter(picture_show.this));
 
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            Intent intent = new Intent(picture_show.this, picture_main_function.class);
+            startActivity(intent);
+            return true;
+        }else {
+            return super.onKeyDown(keyCode, event);
+        }
     }
 
     //自定义修饰器 分割线

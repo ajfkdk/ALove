@@ -2,10 +2,12 @@ package com.example.myapp_ui.picture;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,13 +22,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class picture_show_adapter extends RecyclerView.Adapter<picture_show_adapter.myViewHolder> {
-
+    PopupWindow mPopWindow;
     private Context mCOntext;
     private JSONArray allfiles;
 
     public picture_show_adapter(Context context) {
         mCOntext = context;
-
     }
 
     //  遍历安卓手机里面的文件夹文件
@@ -37,7 +38,6 @@ public class picture_show_adapter extends RecyclerView.Adapter<picture_show_adap
     }
 
     @NonNull
-
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         myViewHolder myViewHolder = new myViewHolder(LayoutInflater.from(mCOntext).inflate(R.layout.activity_picture_main_item, null));//使用该构造方法就不会出现下拉元布局边长的问题
@@ -51,10 +51,11 @@ public class picture_show_adapter extends RecyclerView.Adapter<picture_show_adap
     执行渲染页面的操作
 
     */
+    String path = null;
+    String name = null;
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
-        String path = null;
-        String name = null;
+
 
         try {
             JSONObject jsonObject = allfiles.getJSONObject(position);
@@ -63,11 +64,12 @@ public class picture_show_adapter extends RecyclerView.Adapter<picture_show_adap
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
+//点击时间
         holder.imageView.setImageBitmap(MyNetworkUtil.getLocalImage(name + ".jpg"));
 
-        String finalName = name;
-        holder.itemView.setOnClickListener(new View.OnClickListener() {//点击事件
+        String finalName = name;//解决
+
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mCOntext, picture_show_bigPicture.class);
@@ -75,6 +77,41 @@ public class picture_show_adapter extends RecyclerView.Adapter<picture_show_adap
                 mCOntext.startActivity(intent);
             }
         });
+//长按事件
+        holder.imageView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                View mPopView = LayoutInflater.from(mCOntext).inflate(R.layout.popwindow, null);
+
+                TextView viewById = mPopView.findViewById(R.id.tv_deleteImg);
+                viewById.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mPopWindow.dismiss();
+                        String deletePath = mCOntext.getFilesDir() + "/ALove/"+finalName+".jpg";
+                        file_traverse_util.deleteSingleFile(deletePath);
+                        //向服务器发送请求"http://121.5.27.3:7778/queryImageInfo"
+                        String urlString = "http://121.5.27.3:7778/aaa?image_name="+finalName+".jpg";
+                        try {
+                            MyNetworkUtil.deleteUrl(urlString);
+                        } catch (Exception e) {
+                            Log.e("nihao","net delete wrong!");
+                            e.printStackTrace();
+                        }
+//                        重新刷新界面
+                        Intent intent = new Intent(mCOntext, picture_show.class);
+                        mCOntext.startActivity(intent);
+                    }
+                });
+                mPopWindow= new PopupWindow(mPopView, holder.imageView.getWidth(), ViewGroup.LayoutParams.WRAP_CONTENT);
+                mPopWindow.setOutsideTouchable(true);
+                mPopWindow.setFocusable(true);
+                mPopWindow.showAsDropDown(holder.imageView);
+                return false;
+            }
+        });
+
     }
 
     @Override
@@ -84,15 +121,16 @@ public class picture_show_adapter extends RecyclerView.Adapter<picture_show_adap
     }
 
     class myViewHolder extends RecyclerView.ViewHolder {
-        private TextView textView;
+
         private ImageView imageView;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-            textView = itemView.findViewById(R.id.tv_title_grid);
+
             imageView = itemView.findViewById(R.id.iv_grid);
         }
     }
+
 
 
 }

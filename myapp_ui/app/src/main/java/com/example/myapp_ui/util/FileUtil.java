@@ -63,7 +63,7 @@ public class FileUtil {
 
                 Thread thread = new Thread() {
                     public void run() {
-                        res = net.geturl(activity, "http://121.5.27.3:7778/queryImageInfo");
+                        res = net.geturl("http://121.5.27.3:7778/queryImageInfo");
                     }
                 };
                 thread.start();
@@ -107,9 +107,6 @@ public class FileUtil {
     }
 
 
-   public void My_mkdir(){
-
-   }
 
 
 }

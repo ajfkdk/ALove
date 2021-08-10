@@ -12,6 +12,7 @@ import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapp_ui.MainActivity;
 import com.example.myapp_ui.R;
 import com.example.myapp_ui.network.network_test;
 import com.example.myapp_ui.util.FileUtil;
@@ -236,5 +238,17 @@ public class picture_main_function extends AppCompatActivity  {
     public boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
+
+//    强制返回
+@Override
+public boolean onKeyDown(int keyCode, KeyEvent event) {
+    if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+        Intent intent = new Intent(picture_main_function.this, MainActivity .class);
+        startActivity(intent);
+        return true;
+    }else {
+        return super.onKeyDown(keyCode, event);
+    }
+}
 
 }

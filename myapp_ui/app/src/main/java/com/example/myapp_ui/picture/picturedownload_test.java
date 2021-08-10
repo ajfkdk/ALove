@@ -1,6 +1,5 @@
 package com.example.myapp_ui.picture;
 
-import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
@@ -294,10 +293,8 @@ public class picturedownload_test extends AppCompatActivity {
     public boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
-    public void downloadPicture_test(Context context, Activity activity){
 
-    }
-
+    public void delete_localFile(){}
 
 
 }

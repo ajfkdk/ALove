@@ -20,15 +20,15 @@
 <!--        android:textSize="20sp"-->
 <!--        android:textColor="@color/black"/>-->
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_title_grid"
-        android:text="HELLO"
-        android:textAlignment="center"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        android:maxLines="1"
-        android:ellipsize="marquee"
-        />
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/tv_title_grid"-->
+<!--        android:text="HELLO"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:maxLines="1"-->
+<!--        android:ellipsize="marquee"-->
+<!--        />-->
 </LinearLayout>

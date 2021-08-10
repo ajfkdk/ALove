@@ -3,10 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/chenj/Desktop/Android/myapp_ui/app/src/main/res/drawable/btn_corner.xml" value="0.40260416666666665" />
+        <entry key="..\:/Users/chenj/Desktop/Android/myapp_ui/app/src/main/res/drawable/delete_style.xml" value="0.40260416666666665" />
+        <entry key="..\:/Users/chenj/Desktop/Android/myapp_ui/app/src/main/res/drawable/editview_shape.xml" value="0.40260416666666665" />
+        <entry key="..\:/Users/chenj/Desktop/Android/myapp_ui/app/src/main/res/drawable/ic_launcher_background.xml" value="0.40260416666666665" />
+        <entry key="..\:/Users/chenj/Desktop/Android/myapp_ui/app/src/main/res/layout/activity_movie_search.xml" value="0.348731884057971" />
         <entry key="..\:/Users/chenj/Desktop/Android/myapp_ui/app/src/main/res/layout/activity_picture_main.xml" value="0.21822916666666667" />
         <entry key="..\:/Users/chenj/Desktop/Android/myapp_ui/app/src/main/res/layout/activity_picture_main_function.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/chenj/Desktop/Android/myapp_ui/app/src/main/res/layout/activity_picture_main_item.xml" value="0.348731884057971" />
         <entry key="..\:/Users/chenj/Desktop/Android/myapp_ui/app/src/main/res/layout/activity_picture_sync.xml" value="0.264" />
         <entry key="..\:/Users/chenj/Desktop/Android/myapp_ui/app/src/main/res/layout/activity_picturedownload_test.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/chenj/Desktop/Android/myapp_ui/app/src/main/res/layout/popwindow.xml" value="0.348731884057971" />
       </map>
     </option>
   </component>
